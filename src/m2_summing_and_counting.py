@@ -110,8 +110,10 @@ def sum_more_cosines(m, n):
 
     total = 0
 
-    for k in range(m, n + 1, 1):
-        total = total + math.cos(k)
+    z = n - m
+
+    for k in range(z + 1):
+        total = total + math.cos(m + k)
 
     return total
 
@@ -183,8 +185,10 @@ def count_sines_from(m, n):
 
     total = 0
 
-    for k in range(m, n + 1, 1):
-        val = math.cos(k)
+    z = n - m
+
+    for k in range(z + 1):
+        val = math.cos(k + m)
 
         if val < 0.5:
             total = total + 1
@@ -264,8 +268,10 @@ def count_sines_vs_cosines(m):
 
     total = 0
 
-    for k in range(-m, m + 1, 1):
-        if math.sin(k) > math.cos(k):
+    z = (2 * m) + 1
+
+    for k in range(z):
+        if math.sin(-m + k) > math.cos(-m + k):
             total = total + 1
 
     return total
